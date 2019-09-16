@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+        
+<link rel="stylesheet" href="css/topcoat-desktop-dark.min.css"/>
+<link  id="hostStyle" rel="stylesheet" href="css/styles.css"/>
+
+<title></title>
+</head>
+
+<body class="hostElt">
+
+    <div id="content">        
+        <button id="everyThing" class="topcoat-button--large hostFontSize">everything</button>
+        <button id="fillColors" class="topcoat-button--large hostFontSize">fill colors</button>
+        <button id="Selects" class="topcoat-button--large hostFontSize">selects</button>
+        <button id="findKeyColor" class="topcoat-button--large hostFontSize">replace black</button>
+        <button id="selectBlacks" class="topcoat-button--large hostFontSize"> select blacks</button>
+        <div>                
+            <button id="btn_test" class="topcoat-button--large hostFontSize">Call ExtendScript</button>                
+        </div>   
+        <ul id="itemList"></ul>
+    </div>
+    
+    <!-- These are debugging shortcuts.  Class debuglink items only appear in debug mode  -->
+    <span class="debuglink" id="reload">Reload</span>
+    <span class="debuglink" id="debug">Debug</span>
+    <span class="debuglink" id="sources">Sources</span>
+    
+    <script src="js/libs/CSInterface.js"></script>
+    <script src="js/libs/jquery-2.0.2.min.js"></script>
+
+    <script src="js/themeManager.js"></script>
+    <script src="js/main.js"></script>
+
+        
+</body>
+</html>
