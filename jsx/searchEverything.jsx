@@ -15,12 +15,16 @@
                 obj[obj.length-1].items = [];
                 this.lookForItems(layers[i].pageItems,obj[obj.length-1].items);
             }
+            if(layers[i].typename == "CompoundPathItem"&&layers[i].pathItems.length > 0){
+                obj[obj.length-1].items = [];
+                this.lookForItems(layers[i].pathItems,obj[obj.length-1].items);
+            }
         }
     }
 
     Searching.prototype.lookForItems = function(items,array){
         for(var n=0;n<items.length;n++){
-            $.writeln(items[n]);
+            $.writeln(items[n].typename);
             array.push({name:items[n].typename});
             if(items[n].pageItems&&items[n].pageItems.length > 0){
                 array[array.length-1].items = [];
@@ -28,6 +32,11 @@
             }
             if(items[n].fillColor){
                 array[array.length-1].color = this.getColor(items[n].fillColor);
+            }
+            if(items[n].typename == "CompoundPathItem"&&items[n].pathItems.length > 0){
+                $.writeln("length"+items[n].pathItems.length);
+                array[array.length-1].items = [];
+                this.lookForItems(items[n].pathItems,array[array.length-1].items);
             }
         }
     }
